@@ -12,20 +12,23 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    author = message.author
-    message = message.content
-    print('{} sent by {}'.format(message, author))
+    # sender = message.author
+    # message = message.content
+    # print('{} send by {}'.format(sender, sender))
+    print('a user send a message')
+    await client.process_commands(message)
 
-
-# @client.event
-# async def on_message_delete(message):
-#     author = message.author
-#     content = message.content
-#     channel = message.channel
-#     await client.send_message(channel, '{}: {}'.format(content, author))
 
 @client.command()
 async def ping():
     await client.say('Pong!')
+
+@client.command()
+async def echo(*args):
+    output = ''
+    for word in args:
+        output += word
+        output += ' '
+    await client.say(output)
 
 client.run(Token)
