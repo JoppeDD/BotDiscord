@@ -24,9 +24,8 @@ async def on_message(message):
 #     channel = message.channel
 #     await client.send_message(channel, '{}: {}'.format(content, author))
 
-
-@client.event
-async def
-
+@client.command()
+async def ping():
+    await client.say('Pong!')
 
 client.run(Token)
