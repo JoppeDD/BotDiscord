@@ -25,6 +25,8 @@ async def on_message(message):
 #     await client.send_message(channel, '{}: {}'.format(content, author))
 
 
+@client.event
+async def
 
 
 client.run(Token)
