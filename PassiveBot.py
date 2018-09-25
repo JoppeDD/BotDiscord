@@ -1,4 +1,5 @@
 import discord
+import random
 from discord.ext import commands
 
 Token = 'NDkzODY0MTY3Mjg0MDE1MTA0.DovY1A.we3DSt029qKH2DL9uzSVeMYH9rk'
@@ -19,9 +20,17 @@ async def on_message(message):
     await client.process_commands(message)
 
 
+# @client.command()
+# async def gaydar(person):
+#     getal = random.randint(1,2)
+#     if (getal == 1):
+#         await client.say('')
+
+
 @client.command()
 async def ping():
     await client.say('Pong!')
+
 
 @client.command()
 async def echo(*args):
@@ -30,5 +39,6 @@ async def echo(*args):
         output += word
         output += ' '
     await client.say(output)
+
 
 client.run(Token)
